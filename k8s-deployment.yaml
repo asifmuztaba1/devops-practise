@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-practise-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-practise
+  template:
+    metadata:
+      labels:
+        app: devops-practise
+    spec:
+      containers:
+      - name: devops-practise-container
+        image: devops-practise:1.0
+        ports:
+        - containerPort: 5000
